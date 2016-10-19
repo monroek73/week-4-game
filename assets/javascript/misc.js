@@ -1,32 +1,3 @@
-alert("test");
-
-// Global Variables
-
-var playerScore =0;
-
-var lessthantargetnumber = 0;
-
-var equaltotargetnumber = 0;
-
-var overtargetnumber = 0;
-
-var tarNumber = 0;
-var diamond = 0;
-var ruby = 0;
-var sapphire = 0;
-var emerald = 0;
-
-// var for game status -->
-
-var wins = 0
-
-var losses = 0
-var userClick=null;  
-
-
-// Functions
-
-// Main Process
 
 
 // / // <!-- psuedo-code:
