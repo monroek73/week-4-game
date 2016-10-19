@@ -1,114 +1,164 @@
-alert("test");
-
-// Global Variables
-
-var playerScore =0;
-
-var lessthantargetnumber = 0;
-
-var equaltotargetnumber = 0;
-
-var overtargetnumber = 0;
-
-var tarNumber = 0;
-var diamond = 0;
-var ruby = 0;
+// GLOBAL VARIABLES
+// ------------------------------------------------------------------------------------------------------
+// Arrays and Variables for holding data
+var random = 0;
 var sapphire = 0;
+var ruby = 0;
+var diamond = 0;
 var emerald = 0;
+var user = 0;
 
-// var for game status -->
+   // Game Counters
 
-var wins = 0
+var wins = 0;
+var losses = 0;
+var totalscore = 0;
 
-var losses = 0
-var userClick=null;  
+// FUNCTIONS (resusable blocks of code that I will call upon when needed )
+// ------------------------------------------------------------------------------------------------------
 
+// start of game: regenerating a new random number, displaying the current wins and losses, and generate new random numbers for the crystals
+
+// function to give you a random number at start
+function startGame () {
+    random = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+    emerald = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+    ruby = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+    diamond = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+    sapphire = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+
+   $("#random").text(random);
+}
+// onclick function
+
+  $("#emerald" ).click(function() {
+  console.log( "clicked emerald." );
+  totalscore += emerald;
+  console.log(totalscore);
+ $ ("#totalscore").text(totalscore);
+ 
+  if(totalscore == random) {
+  	 win++;
+  	  document.querySelector('#wins').innerHTML = wins;
+          $('#wins').html(win);
+          startGame();
+          alert('Congratulations,You Win!');
+          //reset game
+          reset();
+   if (totalscore !==random){
+   	    losses++;
+	       $('#losses').html(losses);
+          document.querySelector("#loSsses").innerHTML = loss;
+          alert('Too bad, So sad, You lose!');
+          //reset game
+          reset();
+        }
+        }
+        });
+
+ $("#ruby" ).click(function() {
+ console.log( "clicked ruby.");
+ totalscore += ruby;
+ console.log(totalscore);
+ $("#totalscore").text(totalscore);
+   if(totalscore == random) {
+  	 win++;
+  	  document.querySelector('#wins').innerHTML = wins;0
+          $('#wins').html(win);
+          startGame();
+          alert('Congratulations,You Win!');
+          //reset game
+          reset();
+   if (totalscore !==random){
+   	    losses++;
+	       $('#losses').html(losses);
+          document.querySelector("#loSsses").innerHTML = loss;
+          alert('Too bad, So sad, You lose!');
+          //reset game
+          reset();
+        }
+        }
+        });
+
+$("#diamond" ).click(function() {
+ console.log( "clicked diamond.");
+ totalscore += diamond;
+ console.log(totalscore);
+ $("#totalscore").text(totalscore);
+ $("#totalscore").text(totalscore);
+   if(totalscore == random) {
+  	 win++;
+  	  document.querySelector('#wins').innerHTML = wins;
+          $('#wins').html(win);
+          startGame();
+          alert('Congratulations,You Win!');
+          //reset game
+          reset();
+   if (totalscore !==random)
+   {
+   	    losses++;
+	       $('#losses').html(losses);
+          document.querySelector("#loSsses").innerHTML = loss;
+          alert('Too bad, So sad, You lose!');
+          //reset game
+          reset();
+        }
+        }
+        });
+$("#sapphire" ).click(function() {
+ console.log( "clicked sapphire.");
+ totalscore += sapphire;
+ console.log(totalscore);
+ $("#totalscore").text(totalscore);
+ $("#totalscore").text(totalscore);
+   if(totalscore == random) {
+  	 win++;
+  	  document.querySelector('#wins').innerHTML = wins;
+          $('#wins').html(win);
+          startGame();
+          alert('Congratulations,You Win!');
+          //reset game
+          reset();
+ if (totalscore !==random) {
+    	    losses++;
+	       $('#losses').html(losses);
+          document.querySelector("#loSsses").innerHTML = loss;
+          alert('Too bad, So sad, You lose!');
+          //reset game
+          reset();
+        }
+        }
+	    });
+// Testing/Debugging
+
+var randomnumber= "????"
+
+// MAIN PROCESS
+// --------------------------------------------------------------------------------------------------------
+
+// initiates the code for the first time:
+ startGame();
+
+// Register Keyclicks
+
+$()
+
+document.onclick = function(event) {
+   var emerald = String.fromCharCode(event.keyCode).toLowerCase();
+}
+
+document.onclick = function(event) {
+   var ruby = String.fromCharCode(event.keyCode).toLowerCase();
+}
+document.onclick = function(event) {
+   var diamond = String.fromCharCode(event.keyCode).toLowerCase();
+}
+document.onclick = function(event) {
+   var sapphire = String.fromCharCode(event.keyCode).toLowerCase();
+}
+
+console.log(emerald);
 
 // Functions
 
 // Main Process
-
-
-// / // <!-- psuedo-code:
-
-// //  --> once the game begins:
-
-// <!--  first thing: you must generate a random number.  -->
-
-
- function startGame()
-{
-function random(){
-tarNumber = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-diamond = Math.floor(Math.random() * (12 - 1 + 1)) + 19;
-ruby = Math.floor(Math.random() * (12 - 1 + 1)) + 19;
-sapphire = Math.floor(Math.random() * (12 - 1 + 1)) + 19;
-emerald = Math.floor(Math.random() * (12 - 1 + 1)) + 19;
-console.log(tarNumber);
- };
-
-// var tarNumber = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-
-// var diamond = Math.floor(Math.random() * (12 - 1 + 1)) + 19;
-
-// var ruby = Math.floor(Math.random() * (12 - 1 + 1)) + 19;
-
-// var sapphire = Math.floor(Math.random() * (12 - 1 + 1)) + 19;
-
-// var emerald = Math.floor(Math.random() * (12 - 1 + 1)) + 19;
-
-// <!-- var for each player score -->
-
-
-
-// // <!-- onclickfunction: 
-
-// // use variable to record what number the user clicks -->
-
-// // $('#IMAGES CLASS').click(function(event) {
-
-// // // if attribute is ruby, then increase player score by 4
-// // // if attribute is diamond, then increase player score by 6
-// // if attribute is sapphire, then increase player score by 2
-// // if attribute is emerald, then increase player score by 4
-// }
-
-$( '#ruby', '#emerald', "#diamond", "#sapphire" ).click(function(event) {
-
-     if (userAnswer == ruby) {
-        score++ +4
-       } else { (userAnswer == diamond)
-        score++ +6
-       } else { (userAnswer == sapphire)
-        score++ +2
-       } else { (userAnswer == emerald)
-        score++ +4
-      }
-     });
-
-}
-// <!-- compare the players score to the target score -->
-
-compare the players score to the target score
-
-while (player score is less than target) {
-    statement
-
-    while the players score is less than the target, they will keep playing. when the score is eaqual to the number, then it jumps out of the while loop
-}
-var i = 0; 
-while(i<=10){
-
-}
-
-
-// <!-- if then statement: -->
-
-if the random number equals the target score, you win
-if less than target score, click agin
-if over target score, you loose
-
-must enclose all code into a larger function so you can restart the game
-
-}
-startGame();
