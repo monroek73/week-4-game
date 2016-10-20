@@ -1,6 +1,5 @@
 // GLOBAL VARIABLES
 // ------------------------------------------------------------------------------------------------------
-// Arrays and Variables for holding data
 var random = 0;
 var sapphire = 0;
 var ruby = 0;
@@ -12,7 +11,7 @@ var user = 0;
 
 var wins = 0;
 var losses = 0;
-var totalscore = 0;
+var totalScore = 0;
 
 // FUNCTIONS (resusable blocks of code that I will call upon when needed )
 // ------------------------------------------------------------------------------------------------------
@@ -29,64 +28,59 @@ function startGame () {
 
    $("#random").text(random);
 }
-// onclick function
-
-  $("#emerald" ).click(function() {
-  console.log( "clicked emerald." );
-  totalscore += emerald;
-  console.log(totalscore);
- $ ("#totalscore").text(totalscore);
- 
-  if(totalscore == random) {
+$("#emerald").click(function() {
+  console.log("clicked emerald.");
+  totalScore += emerald;
+  console.log(totalScore);
+ $ ("#totalScore").text(totalScore);
+   if(totalScore == emerald) {
   	 win++;
-  	  document.querySelector('#wins').innerHTML = wins;
-          $('#wins').html(win);
+  	 document.querySelector('#wins').innerHTML = wins;
+ $('#wins').html(win);
           startGame();
           alert('Congratulations,You Win!');
-          //reset game
           reset();
-   if (totalscore !==random){
+        }
+   else if (totalScore !== "#emerald"){
    	    losses++;
 	       $('#losses').html(losses);
-          document.querySelector("#loSsses").innerHTML = loss;
+          document.querySelector("#losses").innerHTML = loss;
           alert('Too bad, So sad, You lose!');
           //reset game
           reset();
         }
-        }
         });
 
- $("#ruby" ).click(function() {
- console.log( "clicked ruby.");
- totalscore += ruby;
- console.log(totalscore);
- $("#totalscore").text(totalscore);
-   if(totalscore == random) {
+ $("ruby" ).click(function() {
+  console.log("clicked ruby.");
+  totalScore += emerald;
+  console.log(totalScore);
+ $ ("#totalscore").text(totalScore);
+   if(totalScore == emerald) {
   	 win++;
-  	  document.querySelector('#wins').innerHTML = wins;0
-          $('#wins').html(win);
+  	 document.querySelector('#wins').innerHTML = wins;
+ $('#wins').html(win);
           startGame();
           alert('Congratulations,You Win!');
-          //reset game
           reset();
-   if (totalscore !==random){
+        }
+   else if (totalScore !== "#ruby"){
    	    losses++;
 	       $('#losses').html(losses);
-          document.querySelector("#loSsses").innerHTML = loss;
+          document.querySelector("#losses").innerHTML = loss;
           alert('Too bad, So sad, You lose!');
           //reset game
           reset();
         }
-        }
-        });
+       });
 
 $("#diamond" ).click(function() {
  console.log( "clicked diamond.");
- totalscore += diamond;
- console.log(totalscore);
- $("#totalscore").text(totalscore);
- $("#totalscore").text(totalscore);
-   if(totalscore == random) {
+ totalScore += diamond;
+ console.log(totalScore);
+ $("#totalScore").text(totalScore);
+ $("#totalScore").text(totalScore);
+   if(totalScore == "#diamond") {
   	 win++;
   	  document.querySelector('#wins').innerHTML = wins;
           $('#wins').html(win);
@@ -94,24 +88,24 @@ $("#diamond" ).click(function() {
           alert('Congratulations,You Win!');
           //reset game
           reset();
-   if (totalscore !==random)
-   {
+      }
+        else if (totalScore !== "#diamond"){
    	    losses++;
 	       $('#losses').html(losses);
-          document.querySelector("#loSsses").innerHTML = loss;
+          document.querySelector("#losses").innerHTML = loss;
           alert('Too bad, So sad, You lose!');
           //reset game
           reset();
-        }
-        }
-        });
-$("#sapphire" ).click(function() {
- console.log( "clicked sapphire.");
- totalscore += sapphire;
- console.log(totalscore);
- $("#totalscore").text(totalscore);
- $("#totalscore").text(totalscore);
-   if(totalscore == random) {
+         } 
+         });
+                       
+ $("#sapphire").click(function() {
+ console.log("clicked sapphire.");
+ totalScore += "#sapphire";
+ console.log(totalScore);
+ $("#totalScore").text(totalScore);
+ $("#totalScore").text(totalScore);
+   if(totalScore == "#sapphire") {
   	 win++;
   	  document.querySelector('#wins').innerHTML = wins;
           $('#wins').html(win);
@@ -119,14 +113,15 @@ $("#sapphire" ).click(function() {
           alert('Congratulations,You Win!');
           //reset game
           reset();
- if (totalscore !==random) {
+                }
+ else if (totalScore !== "#sapphire") {
     	    losses++;
 	       $('#losses').html(losses);
-          document.querySelector("#loSsses").innerHTML = loss;
+          document.querySelector("#losses").innerHTML = loss;
           alert('Too bad, So sad, You lose!');
           //reset game
           reset();
-        }
+
         }
 	    });
 // Testing/Debugging
@@ -158,7 +153,3 @@ document.onclick = function(event) {
 }
 
 console.log(emerald);
-
-// Functions
-
-// Main Process
